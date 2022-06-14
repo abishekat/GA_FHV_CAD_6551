@@ -1,0 +1,217 @@
+Formality (setup)> set synopsys_auto_setup true 
+true
+
+Formality (setup)> read_vhdl -container r -libname WORK -93 { /nfs/home/a/ab_arumu/formality/netlist.vhdl }  Loading vhdl file '/nfs/home/a/ab_arumu/formality/netlist.vhdl'
+Current container set to 'r'
+1
+
+Formality (setup)> read_db { /nfs/home/a/ab_arumu/formality/class.db }  Loading db file '/nfs/home/a/ab_arumu/formality/class.db'
+1
+
+Formality (setup)> set_top r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4  Setting top design to 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Status:   Elaborating design am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4   ...  
+Status:  Implementing inferred operators...
+Top design successfully set to 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Reference design set to 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+1
+
+Formality (setup)> set_reference r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4  Reference design set to 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+1
+
+Formality (setup)> read_vhdl -container i -libname WORK -93 { /nfs/home/a/ab_arumu/BG/final.vhd }  Loading vhdl file '/nfs/home/a/ab_arumu/BG/final.vhd'
+Current container set to 'i'
+1
+
+Formality (setup)> read_db { /nfs/home/a/ab_arumu/BG/class.db }  Loading db file '/nfs/home/a/ab_arumu/BG/class.db'
+Loading new version of design 'AN2' into shared technology library 'CLASS'
+Loading new version of design 'AN2I' into shared technology library 'CLASS'
+Loading new version of design 'OR2' into shared technology library 'CLASS'
+Loading new version of design 'OR2I' into shared technology library 'CLASS'
+Loading new version of design 'IV' into shared technology library 'CLASS'
+Loading new version of design 'IVI' into shared technology library 'CLASS'
+Loading new version of design 'IVP' into shared technology library 'CLASS'
+Loading new version of design 'IVA' into shared technology library 'CLASS'
+Loading new version of design 'IVAP' into shared technology library 'CLASS'
+Loading new version of design 'IVDA' into shared technology library 'CLASS'
+Loading new version of design 'IVDAP' into shared technology library 'CLASS'
+Loading new version of design 'B5I' into shared technology library 'CLASS'
+Loading new version of design 'B5IP' into shared technology library 'CLASS'
+Loading new version of design 'B4I' into shared technology library 'CLASS'
+Loading new version of design 'B4IP' into shared technology library 'CLASS'
+Loading new version of design 'ND2' into shared technology library 'CLASS'
+Loading new version of design 'ND2I' into shared technology library 'CLASS'
+Loading new version of design 'ND2P' into shared technology library 'CLASS'
+Loading new version of design 'NR2' into shared technology library 'CLASS'
+Loading new version of design 'NR2I' into shared technology library 'CLASS'
+Loading new version of design 'NR2P' into shared technology library 'CLASS'
+Loading new version of design 'EN' into shared technology library 'CLASS'
+Loading new version of design 'ENI' into shared technology library 'CLASS'
+Loading new version of design 'EO' into shared technology library 'CLASS'
+Loading new version of design 'EOI' into shared technology library 'CLASS'
+Loading new version of design 'ND3' into shared technology library 'CLASS'
+Loading new version of design 'ND3P' into shared technology library 'CLASS'
+Loading new version of design 'NR3' into shared technology library 'CLASS'
+Loading new version of design 'NR3P' into shared technology library 'CLASS'
+Loading new version of design 'AN3' into shared technology library 'CLASS'
+Loading new version of design 'OR3' into shared technology library 'CLASS'
+Loading new version of design 'ND4' into shared technology library 'CLASS'
+Loading new version of design 'ND4P' into shared technology library 'CLASS'
+Loading new version of design 'NR4' into shared technology library 'CLASS'
+Loading new version of design 'ND5' into shared technology library 'CLASS'
+Loading new version of design 'AO6' into shared technology library 'CLASS'
+Loading new version of design 'AO6P' into shared technology library 'CLASS'
+Loading new version of design 'AO7' into shared technology library 'CLASS'
+Loading new version of design 'AO7P' into shared technology library 'CLASS'
+Loading new version of design 'AO2' into shared technology library 'CLASS'
+Loading new version of design 'AO2P' into shared technology library 'CLASS'
+Loading new version of design 'AO4' into shared technology library 'CLASS'
+Loading new version of design 'AO4P' into shared technology library 'CLASS'
+Loading new version of design 'AO1' into shared technology library 'CLASS'
+Loading new version of design 'AO3' into shared technology library 'CLASS'
+Loading new version of design 'AN2P' into shared technology library 'CLASS'
+Loading new version of design 'AN3P' into shared technology library 'CLASS'
+Loading new version of design 'AN4' into shared technology library 'CLASS'
+Loading new version of design 'AN4P' into shared technology library 'CLASS'
+Loading new version of design 'OR2P' into shared technology library 'CLASS'
+Loading new version of design 'OR3P' into shared technology library 'CLASS'
+Loading new version of design 'OR4' into shared technology library 'CLASS'
+Loading new version of design 'OR4P' into shared technology library 'CLASS'
+Loading new version of design 'MUX21H' into shared technology library 'CLASS'
+Loading new version of design 'NR5' into shared technology library 'CLASS'
+Loading new version of design 'ND6' into shared technology library 'CLASS'
+Loading new version of design 'NR6' into shared technology library 'CLASS'
+Loading new version of design 'ND8' into shared technology library 'CLASS'
+Loading new version of design 'NR8' into shared technology library 'CLASS'
+Loading new version of design 'EON1' into shared technology library 'CLASS'
+Loading new version of design 'EO1' into shared technology library 'CLASS'
+Loading new version of design 'ND5P' into shared technology library 'CLASS'
+Loading new version of design 'NR5P' into shared technology library 'CLASS'
+Loading new version of design 'ND6P' into shared technology library 'CLASS'
+Loading new version of design 'NR6P' into shared technology library 'CLASS'
+Loading new version of design 'ND8P' into shared technology library 'CLASS'
+Loading new version of design 'NR8P' into shared technology library 'CLASS'
+Loading new version of design 'NR16' into shared technology library 'CLASS'
+Loading new version of design 'NR16P' into shared technology library 'CLASS'
+Loading new version of design 'ENP' into shared technology library 'CLASS'
+Loading new version of design 'EOP' into shared technology library 'CLASS'
+Loading new version of design 'EO1P' into shared technology library 'CLASS'
+Loading new version of design 'EON1P' into shared technology library 'CLASS'
+Loading new version of design 'AO1P' into shared technology library 'CLASS'
+Loading new version of design 'AO3P' into shared technology library 'CLASS'
+Loading new version of design 'MUX21HP' into shared technology library 'CLASS'
+Loading new version of design 'MUX21L' into shared technology library 'CLASS'
+Loading new version of design 'MUX21LP' into shared technology library 'CLASS'
+Loading new version of design 'MUX31L' into shared technology library 'CLASS'
+Loading new version of design 'MUX31LP' into shared technology library 'CLASS'
+Loading new version of design 'MUX21LA' into shared technology library 'CLASS'
+Loading new version of design 'AO5' into shared technology library 'CLASS'
+Loading new version of design 'AO5P' into shared technology library 'CLASS'
+Loading new version of design 'EN3' into shared technology library 'CLASS'
+Loading new version of design 'EN3P' into shared technology library 'CLASS'
+Loading new version of design 'EO3' into shared technology library 'CLASS'
+Loading new version of design 'EO3P' into shared technology library 'CLASS'
+Loading new version of design 'MUX21LAP' into shared technology library 'CLASS'
+Loading new version of design 'NR4P' into shared technology library 'CLASS'
+Loading new version of design 'FD1' into shared technology library 'CLASS'
+Loading new version of design 'FD1S' into shared technology library 'CLASS'
+Loading new version of design 'FD2' into shared technology library 'CLASS'
+Loading new version of design 'FD2S' into shared technology library 'CLASS'
+Loading new version of design 'FD4' into shared technology library 'CLASS'
+Loading new version of design 'FD4S' into shared technology library 'CLASS'
+Loading new version of design 'B2I' into shared technology library 'CLASS'
+Loading new version of design 'B2IP' into shared technology library 'CLASS'
+Loading new version of design 'B3I' into shared technology library 'CLASS'
+Loading new version of design 'B3IP' into shared technology library 'CLASS'
+Loading new version of design 'BTS5' into shared technology library 'CLASS'
+Loading new version of design 'LD1' into shared technology library 'CLASS'
+Loading new version of design 'IBUF1' into shared technology library 'CLASS'
+Loading new version of design 'IBUF2' into shared technology library 'CLASS'
+Loading new version of design 'IBUF3' into shared technology library 'CLASS'
+Loading new version of design 'IBUF4' into shared technology library 'CLASS'
+Loading new version of design 'IBUF5' into shared technology library 'CLASS'
+Loading new version of design 'OBUF1' into shared technology library 'CLASS'
+Loading new version of design 'OBUF2' into shared technology library 'CLASS'
+Loading new version of design 'BIDI' into shared technology library 'CLASS'
+1
+
+Formality (setup)> set_top i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4  Setting top design to 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Status:   Elaborating design am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4   ...  
+Status:  Implementing inferred operators...
+Top design successfully set to 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Implementation design set to 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+1
+
+Formality (setup)> set_implementation i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4  Implementation design set to 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+1
+
+Formality (setup)> match  Reference design is 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Implementation design is 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Status:  Checking designs...
+
+Warning: 0 (2) undriven nets found in reference (implementation) design; see formality4.log for list (FM-399) Info:  0 (3) multiply-driven nets found in reference (implementation) design; see formality4.log for list.
+Status:  Building verification models...
+Status:  Matching...
+
+*********************************** Matching Results ***********************************
+ 15 Compare points matched by name
+ 0 Compare points matched by signature analysis
+ 0 Compare points matched by topology
+ 2 Matched primary inputs, black-box outputs
+ 0(0) Unmatched reference(implementation) compare points
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs
+ 0(9) Unmatched reference(implementation) unread points
+****************************************************************************************
+
+1
+
+Formality (match)> verify  Reference design is 'r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+Implementation design is 'i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+
+*********************************** Matching Results ***********************************
+ 15 Compare points matched by name
+ 0 Compare points matched by signature analysis
+ 0 Compare points matched by topology
+ 2 Matched primary inputs, black-box outputs
+ 0(0) Unmatched reference(implementation) compare points
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs
+ 0(9) Unmatched reference(implementation) unread points
+****************************************************************************************
+
+Status:  Verifying...
+
+***************************** Synopsys Auto Setup Summary ******************************
+
+!!! Synopsys Auto Setup Mode was enabled. !!!
+!!! Verification results are valid assuming the following setup constraints: !!!
+
+### RTL Interpretation Setup
+   set hdlin_ignore_parallel_case false
+   set hdlin_ignore_full_case false
+   set hdlin_error_on_mismatch_message false
+   set hdlin_ignore_embedded_configuration true
+
+### Test Logic Setup
+   set verification_verify_directly_undriven_output false
+   For details see report_dont_verify_points and report_constants
+
+
+For further details on Synopsys Auto Setup Mode: Type man synopsys_auto_setup
+****************************************************************************************
+
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+   ATTENTION: synopsys_auto_setup mode was enabled.
+              See Synopsys Auto Setup Summary for details.
+----------------------------------------------------------
+ Reference design: r:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4
+ Implementation design: i:/WORK/am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4
+ 15 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0       2      13       0      15
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+****************************************************************************************
+1
+

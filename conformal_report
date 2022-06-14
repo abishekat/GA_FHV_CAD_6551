@@ -1,0 +1,445 @@
+SETUP> read library -Both -Replace  -sensitive    -Verilog /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Command: read library -Both -Replace  -sensitive    -Verilog /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Parsing file /nfs/home/a/ab_arumu/formality/class.lib ...
+// Error: Check syntax error on Verilog module declaration
+RTL19.1: Identifier is a reserved keyword and might conflict in designs with mixed languages
+    Type: Golden library     Severity: Warning    Occurrence: 1
+    1: Identifier 'library' is a Verilog 2001 keyword
+       on line 1 in file '/nfs/home/a/ab_arumu/formality/class.lib'
+// Error: PARSE_ERROR: Parsing syntax error
+//  parse error near token 'library'
+//  on line 1 in file '/nfs/home/a/ab_arumu/formality/class.lib'
+// Error: Check syntax error on Verilog module declaration
+// Error: PARSE_ERROR: Parsing syntax error
+//  parse error near token 'library'
+//  on line 1 in file '/nfs/home/a/ab_arumu/formality/class.lib'
+// Error: Read library failed in REVISED
+SETUP> read library -Golden -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Command: read library -Golden -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Parsing file /nfs/home/a/ab_arumu/formality/class.lib ...
+// Note: Read Liberty library successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/netlist.vhdl" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:12)
+// Note: Read VHDL design successfully
+SETUP> read design /nfs/home/a/ab_arumu/BG/final.vhd -VHDL -Revised            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/BG/final.vhd -VHDL -Revised            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/BG/final.vhd" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Revised root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:1)
+// Warning: (RTL2.5) Undriven net is detected (occurrence:2)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:15)
+// Note: (HRC1.3) Module/entity is undefined and created (blackboxed) (occurrence:14)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:7)
+// Warning: Total black box modules referenced in Revised = 14
+// Warning: There are 2 undriven nets in Revised
+// Note: Read VHDL design successfully
+SETUP> set system mode lec
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// (F32) Created 2 Z gate(s) for floating net(s) and floating pin(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 17
+// Revised key points = 65
+// Mapping key points ...
+// Warning: More than 1/3 of the key points have mis-matched names
+// Warning: Please use renaming rules if automatic mapping fails to finish
+// Warning: Golden has 13 unmapped key points
+// Warning: Revised has 53 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO        Total   
+--------------------------------------------------------------------------------
+Golden            2      2         4       
+--------------------------------------------------------------------------------
+Revised           2      2         4       
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        13        13      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       2      6         8       
+Not-mapped        0      53        53      
+================================================================================
+// Warning: Key point mapping is incomplete
+LEC> add compared points -all
+// Command: add compared points -all
+// Warning: Golden has 13 unmapped key points which will not be compared
+// Warning: Revised has 53 unmapped key points which will not be compared
+// 2 compared points added to compare list
+LEC> compare
+// Command: compare
+================================================================================
+Compared points      PO        Total   
+--------------------------------------------------------------------------------
+Non-equivalent       2         2       
+================================================================================
+LEC> report statistics
+// Command: report statistics
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          am_baud_rate...   am_baud_rate...   
+
+Primary inputs                                 2                  2
+   Mapped                                      2                  2
+
+Tri-state (Z) key points                       0                  2
+   Unmapped                                    0                  2
+      Unreachable                              0                  2
+
+Primary outputs                                2                  2
+   Mapped                                      2                  2
+      Non-equivalent              2
+
+Black-box key points                           0                 59
+   Unmapped                                    0                 59
+      Unreachable                              0                  6
+      Not-mapped                               0                 53
+
+State key points                              13                  0
+   Unmapped                                   13                  0
+      Not-mapped                              13                  0
+================================================================================
+LEC> report black box -class Full -Both -Module -Hier -Hidden
+// Command: report black box -class Full -Both -Module -Hier -Hidden
+SYSTEM: (R) AN2I
+SYSTEM: (R) AO3
+SYSTEM: (R) AO6
+SYSTEM: (R) EN
+SYSTEM: (R) EOI
+SYSTEM: (R) FD1
+SYSTEM: (R) IVI
+SYSTEM: (R) MUX21L
+SYSTEM: (R) ND2I
+SYSTEM: (R) ND3
+SYSTEM: (R) NR2I
+SYSTEM: (R) NR4
+SYSTEM: (R) OR2
+SYSTEM: (R) OR3
+LEC> set system mode setup
+// Command: set system mode setup
+SETUP> read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Warning: Existing golden design has been deleted
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/netlist.vhdl" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:12)
+// Note: Read VHDL design successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/Abi.vhd -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/Abi.vhd -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Warning: Existing golden design has been deleted
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/Abi.vhd" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:1)
+// Warning: (RTL2.5) Undriven net is detected (occurrence:2)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:15)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:7)
+// Warning: There are 2 undriven nets in Golden
+// Note: Read VHDL design successfully
+SETUP> set system mode lec
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// (F32) Created 2 Z gate(s) for floating net(s) and floating pin(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 17
+// Revised key points = 65
+// Mapping key points ...
+// Warning: More than 1/3 of the key points have mis-matched names
+// Warning: Please use renaming rules if automatic mapping fails to finish
+// Warning: Golden has 13 unmapped key points
+// Warning: Revised has 53 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO        Total   
+--------------------------------------------------------------------------------
+Golden            2      2         4       
+--------------------------------------------------------------------------------
+Revised           2      2         4       
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        13        13      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       2      6         8       
+Not-mapped        0      53        53      
+================================================================================
+// Warning: Key point mapping is incomplete
+LEC> set system mode setup
+// Command: set system mode setup
+SETUP> read design /nfs/home/a/ab_arumu/BG/final.vhd -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/BG/final.vhd -VHDL -Golden -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Warning: Existing golden design has been deleted
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/BG/final.vhd" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:1)
+// Warning: (RTL2.5) Undriven net is detected (occurrence:2)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:15)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:7)
+// Warning: There are 2 undriven nets in Golden
+// Note: Read VHDL design successfully
+SETUP> set system mode lec
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// (F32) Created 2 Z gate(s) for floating net(s) and floating pin(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 17
+// Revised key points = 65
+// Mapping key points ...
+// Warning: More than 1/3 of the key points have mis-matched names
+// Warning: Please use renaming rules if automatic mapping fails to finish
+// Warning: Golden has 13 unmapped key points
+// Warning: Revised has 53 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO        Total   
+--------------------------------------------------------------------------------
+Golden            2      2         4       
+--------------------------------------------------------------------------------
+Revised           2      2         4       
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        13        13      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       2      6         8       
+Not-mapped        0      53        53      
+================================================================================
+// Warning: Key point mapping is incomplete
+LEC> add compared points -all
+// Command: add compared points -all
+// Warning: Golden has 13 unmapped key points which will not be compared
+// Warning: Revised has 53 unmapped key points which will not be compared
+// 2 compared points added to compare list
+LEC> compare
+// Command: compare
+================================================================================
+Compared points      PO        Total   
+--------------------------------------------------------------------------------
+Non-equivalent       2         2       
+================================================================================
+LEC> set system mode setup
+// Command: set system mode setup
+SETUP> read library -Both -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Command: read library -Both -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Warning: Existing golden design has been deleted
+// Warning: Existing golden library has been deleted
+// Parsing file /nfs/home/a/ab_arumu/formality/class.lib ...
+// Note: Read Liberty library successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/netlist.vhdl" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:12)
+// Note: Read VHDL design successfully
+SETUP> set system mode lec
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// (F32) Created 2 Z gate(s) for floating net(s) and floating pin(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 17
+// Revised key points = 65
+// Mapping key points ...
+// Warning: More than 1/3 of the key points have mis-matched names
+// Warning: Please use renaming rules if automatic mapping fails to finish
+// Warning: Golden has 13 unmapped key points
+// Warning: Revised has 53 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO        Total   
+--------------------------------------------------------------------------------
+Golden            2      2         4       
+--------------------------------------------------------------------------------
+Revised           2      2         4       
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        13        13      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z      BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       2      6         8       
+Not-mapped        0      53        53      
+================================================================================
+// Warning: Key point mapping is incomplete
+LEC> add compared points -all
+// Command: add compared points -all
+// Warning: Golden has 13 unmapped key points which will not be compared
+// Warning: Revised has 53 unmapped key points which will not be compared
+// 2 compared points added to compare list
+LEC> compare
+// Command: compare
+================================================================================
+Compared points      PO        Total   
+--------------------------------------------------------------------------------
+Non-equivalent       2         2       
+================================================================================
+LEC> set system mode setup
+// Command: set system mode setup
+SETUP> read library -Revised -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Command: read library -Revised -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Warning: Existing revised design has been deleted
+// Warning: Existing revised library has been deleted
+// Parsing file /nfs/home/a/ab_arumu/formality/class.lib ...
+// Note: Read Liberty library successfully
+SETUP> read library -Golden -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Command: read library -Golden -Replace  -sensitive  -Statetable  -Liberty /nfs/home/a/ab_arumu/formality/class.lib -nooptimize   
+// Warning: Existing golden design has been deleted
+// Warning: Existing golden library has been deleted
+// Parsing file /nfs/home/a/ab_arumu/formality/class.lib ...
+// Note: Read Liberty library successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Revised            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Revised            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/netlist.vhdl" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Revised root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:12)
+// Note: Read VHDL design successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/netlist.vhdl -VHDL -Golden            -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/netlist.vhdl" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Golden root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:12)
+// Note: Read VHDL design successfully
+SETUP> read design /nfs/home/a/ab_arumu/formality/Abi.vhd -VHDL -Revised -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Command: read design /nfs/home/a/ab_arumu/formality/Abi.vhd -VHDL -Revised -Replace           -continuousassignment Bidirectional   -nokeep_unreach    -norangeconstraint
+// Warning: Existing revised design has been deleted
+// Loading "synopsys.attributes" (system "attributes.vhd")
+// Loading "ieee.std_logic_1164" (system "std_logic_1164.vhd")
+// Parsing file "/nfs/home/a/ab_arumu/formality/Abi.vhd" ... (library work)
+// Compiling entity "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4"
+// Compiling architecture "am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4(SYN_baud_rtl)"
+// Generating logic ...
+// Revised root module is set to 'am_baud_rate_gen_baudrate115200_clock_freq_mhz200_over_sample4'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:1)
+// Warning: (RTL2.5) Undriven net is detected (occurrence:2)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:15)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:7)
+// Warning: There are 2 undriven nets in Revised
+// Note: Read VHDL design successfully
+SETUP> set system mode lec
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 1 wire resolution gate(s) due to multiple-driven net(s)
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            2      2      13        17      
+--------------------------------------------------------------------------------
+Revised           2      2      13        17      
+================================================================================
+LEC> add compared points -all
+// Command: add compared points -all
+// 15 compared points added to compare list
+LEC> compare
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           2      13        15      
+================================================================================
+LEC> report black box -class Full -Both -Module -Hier -Hidden
+// Command: report black box -class Full -Both -Module -Hier -Hidden
+No report information.
+
+
